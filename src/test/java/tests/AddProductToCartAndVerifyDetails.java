@@ -26,11 +26,8 @@ public class AddProductToCartAndVerifyDetails {
         WebElement shoppingCartButton = driver.findElement(By.cssSelector(".shopping_cart_link"));
         shoppingCartButton.click();
         String actualPrice = driver.findElement(By.xpath("//*[text()=\"9.99\"]")).getText();
-        Assert.assertTrue(actualPrice.contains("9.99"));
         String actualProductName = driver.findElement(By.cssSelector("[data-test=\"inventory-item-name\"]")).getText();
+        Assert.assertTrue(actualPrice.contains("9.99"));
         Assert.assertEquals(actualProductName, "Sauce Labs Bike Light");
-
-
-
     }
 }
